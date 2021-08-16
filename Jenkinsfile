@@ -11,7 +11,6 @@ pipeline {
 
         stage('compile') {
           steps {
-            withMaven(maven: 'maven_3.8.1')
             bat 'mvn compile'
           }
         }
@@ -21,13 +20,13 @@ pipeline {
 
     stage('Unit tests') {
       steps {
-        sh 'mvn -Dtest=HelloWorldTest#test test -p1 core'
+        bat 'mvn -Dtest=HelloWorldTest#test test -p1 core'
       }
     }
 
     stage('package') {
       steps {
-        sh 'mvn package'
+        bat 'mvn package'
       }
     }
 
