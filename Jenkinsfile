@@ -20,7 +20,7 @@ pipeline {
 
     stage('Unit tests') {
       steps {
-        bat 'mvn -Dtest=HelloWorldTest#test test -p1 core'
+        bat 'mvn test'
       }
     }
 
