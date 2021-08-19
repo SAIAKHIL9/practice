@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('build and compile') {
+    stage('Build and compile') {
       parallel {
-        stage('build and compile') {
+        stage('') {
           steps {
             git(url: 'https://github.com/SAIAKHIL9/practice.git', branch: 'jen', credentialsId: '3bb6ff0e-ed61-4295-b136-12ba3c69e2e8')
           }
