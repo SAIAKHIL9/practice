@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build and compile') {
       parallel {
-        stage('') {
+        stage('error') {
           steps {
             git(url: 'https://github.com/SAIAKHIL9/practice.git', branch: 'jen', credentialsId: '3bb6ff0e-ed61-4295-b136-12ba3c69e2e8')
           }
