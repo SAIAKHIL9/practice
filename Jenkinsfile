@@ -38,6 +38,6 @@ pipeline {
 
   }
   environment {
-    Maven = 'maven_3.8.1'
+    Maven = 'maven_3.8.2'
   }
 }
