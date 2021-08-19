@@ -6,7 +6,6 @@ pipeline {
         stage('build and compile') {
           steps {
             git(url: 'https://github.com/SAIAKHIL9/practice.git', branch: 'jen', credentialsId: '3bb6ff0e-ed61-4295-b136-12ba3c69e2e8')
-            tool(name: 'maven', type: 'maven_3.8.2')
           }
         }
 
@@ -37,5 +36,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    maven = 'maven_3.8.2'
   }
 }
