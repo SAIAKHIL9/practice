@@ -4,6 +4,9 @@ pipeline {
     stage('Build and compile') {
       parallel {
         stage('build') {
+          environment {
+            Akhil = 'maven_3.8.2'
+          }
           steps {
             git(url: 'https://github.com/SAIAKHIL9/practice.git', branch: 'jen', credentialsId: '3bb6ff0e-ed61-4295-b136-12ba3c69e2e8')
           }
@@ -11,7 +14,10 @@ pipeline {
 
         stage('compile') {
           steps {
-            bat 'mvn compile'
+            withMaven(maven: 'Akhil') {
+              bat 'mvn compile'
+            }
+
           }
         }
 
@@ -42,8 +48,5 @@ pipeline {
       }
     }
 
-  }
-  environment {
-    maven = 'maven_3.8.2'
   }
 }
