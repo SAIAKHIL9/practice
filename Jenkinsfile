@@ -26,13 +26,19 @@ pipeline {
 
     stage('unit tests') {
       steps {
-        bat 'mvn test'
+        withMaven(maven: 'maven_3.8.2') {
+          bat 'mvn test'
+        }
+
       }
     }
 
     stage('package') {
       steps {
-        bat 'mvn package'
+        withMaven(maven: 'maven_3.8.2') {
+          bat 'mvn package'
+        }
+
       }
     }
 
